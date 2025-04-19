@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySources;
 
 @Configuration
 @PropertySources({
-        @PropertySource(value="claspath:values.properties",encoding = "UTF-8")
+        @PropertySource(value="classpath:values.properties",encoding = "UTF-8")
 })
 public class ValuesConfig {
 

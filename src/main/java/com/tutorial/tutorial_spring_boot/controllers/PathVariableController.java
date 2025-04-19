@@ -28,6 +28,23 @@ public class PathVariableController {
     @Value("${config.listOfValues}")
     private List<String> listOfValues;
 
+    @Value("#{'${config.listOfValues}'.toUpperCase().split(',')}")
+    private List<String> valueList;
+
+    @Value("#{'${config.listOfValues}'.toUpperCase()}")
+    private String valueString;
+
+    @Value("#{${config.valuesMap}}")
+    private Map<String,Object> valuesMap;
+
+    @Value("#{${config.valuesMap}.product}")
+    private String product;
+
+    @Value("#{${config.valuesMap}.precio}")
+    private Long precio;
+    
+
+
     @GetMapping("/baz/{message}")
     // El message que mandamos en api/var/baz/holaquetal es devuelto en el
     // paramixDTO.
@@ -44,6 +61,11 @@ public class PathVariableController {
         json.put("message", message);
         json.put("code", code);
         json.put("listOfValues", listOfValues);
+        json.put("valueList", valueList);
+        json.put("valueString", valueString);
+        json.put("valuesMap", valuesMap);
+        json.put("product", product);
+        json.put("precio", precio);
         return json;
     }
 
