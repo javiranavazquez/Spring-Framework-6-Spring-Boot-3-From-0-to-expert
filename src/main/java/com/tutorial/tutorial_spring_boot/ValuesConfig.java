@@ -1,0 +1,13 @@
+package com.tutorial.tutorial_spring_boot;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+
+@Configuration
+@PropertySources({
+        @PropertySource(value="claspath:values.properties",encoding = "UTF-8")
+})
+public class ValuesConfig {
+
+}
